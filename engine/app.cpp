@@ -31,6 +31,8 @@ void app_init(AppConfig* config)
 
 	log_init(ss.str());
 
+	input_init();
+
 	if (g_config->app)
 	{
 		g_config->app->init();
@@ -55,6 +57,8 @@ void app_update()
 			{
 				app_quit();
 			}
+
+			input_event(g_config->evt);
 		}
 
 		if (g_config->app)
@@ -74,6 +78,9 @@ void app_update()
 		{
 			g_config->fixedDelta = 0.0f;
 		}
+
+		input_update();
+
 		SDL_GL_SwapWindow(g_config->window);
 	}
 }
@@ -84,6 +91,8 @@ void app_release()
 	{
 		g_config->app->release();
 	}
+
+	input_release();
 
 	log_release();
 

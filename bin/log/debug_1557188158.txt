@@ -1,1 +1,0 @@
-LOG> Hello, from init()
