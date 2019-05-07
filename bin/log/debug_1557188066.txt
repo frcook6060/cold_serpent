@@ -1,0 +1,2 @@
+LOG> Hello, from init()
+LOG> Hello, from release()

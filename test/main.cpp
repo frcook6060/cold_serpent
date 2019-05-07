@@ -1,8 +1,18 @@
-#include <sys.h>
+#include "AppTest.h"
 
 int main(int argc, char** argv)
 {
-	std::cout << helloFromLibrary() << std::endl;
-	std::getchar();
+	AppTest test;
+	AppConfig config;
+
+	config.caption = "Cold Serpent Engine Test";
+	config.width = 1280;
+	config.height = 720;
+	config.app = &test;
+
+	app_init(&config);
+	app_update();
+	app_release();
+
 	return 0;
 }

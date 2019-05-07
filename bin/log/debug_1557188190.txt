@@ -1,0 +1,3 @@
+LOG> Hello, from init()
+LOG> Hello, World 100 69.500000 NO!
+LOG> Hello, from release()
